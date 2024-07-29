@@ -39,13 +39,15 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.11
     - name: build package
       run: | 
-        cd ..
-        ls -a
         python -m pip install --upgrade pip
         pip install --upgrade build
-        ls
         python -m build
     - name: create release
       uses: softprops/action-gh-release@v1
