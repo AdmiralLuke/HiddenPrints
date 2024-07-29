@@ -5,9 +5,8 @@ name: Python package
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
   build:
@@ -49,12 +48,25 @@ jobs:
         python -m pip install --upgrade pip
         pip install --upgrade build
         python -m build
-    - name: create release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          dist/*.tar
-          dist/*.whl
+        pip install setuptools wheel twine
+    - name: Create GitHub Release
+      id: create_release
+      uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: dist/*
+        asset_name: ${{ github.ref }}-dist
+        asset_content_type: application/zip
     
