@@ -18,8 +18,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/admiralluke/hiddenprint"
-Issues = "https://github.com/admiralluke/hiddenprint/issues"
+Homepage = "https://github.com/AdmiralLuke/HiddenPrints"
+Issues = "https://github.com/AdmiralLuke/HiddenPrints/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]

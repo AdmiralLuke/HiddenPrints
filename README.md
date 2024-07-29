@@ -1,6 +1,6 @@
 # HiddenPrints
 
-![workflow](https://github.com/admiralluke/HiddenPrints/actions/workflows/main.yml/badge.svg)
+![workflow](https://github.com/AdmiralLuke/HiddenPrints/actions/workflows/main.yml/badge.svg)
 
 Sick of unnecessary prints from other libraries? Simply block them of with this small package
 
