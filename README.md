@@ -1,5 +1,7 @@
 # HiddenPrints
 
+![workflow](https://github.com/admiralluke/hiddenprints/actions/workflows/main.yml/badge.svg)
+
 Sick of unnecessary prints from other libraries? Simply block them of with this small package
 
 ## Install
