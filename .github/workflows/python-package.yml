@@ -70,5 +70,13 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: dist/*
         asset_name: ${{ github.ref }}-dist
-        asset_content_type: application/zip
+        asset_content_type: application/zip#
+  
+    - name: Publish to PyPI
+      env:
+        TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+      run: |
+        twine upload dist/*
+
     
