@@ -9,7 +9,7 @@ Sick of unnecessary prints from other libraries? Simply block them of with this 
 ### via pip
 
 ```bash
-pip install hiddenprints
+pip install hiddenprint
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ pip install hiddenprints
 To use the blocking mechanisms inside of methods for one or more lines of code, just wrap it in a ``with``-statement
 
 ```py
-from hiddenprints import *
+from hiddenprint import *
 
 with HiddenPrints():
     # code where prints should not be visible in the console
@@ -33,7 +33,7 @@ print("Hello World!")
 To block prints right up for a self defined function, decorator annotations can be used to block all prints within the function.
 
 ```py
-from hiddenprints import *
+from hiddenprint import *
 
 @hide
 def print_nothing_and_sum(a: int, b: int):
