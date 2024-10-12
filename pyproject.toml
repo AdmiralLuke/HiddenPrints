@@ -22,4 +22,4 @@ Homepage = "https://github.com/AdmiralLuke/HiddenPrints"
 Issues = "https://github.com/AdmiralLuke/HiddenPrints/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src"]
+packages = ["hiddenprint"]
